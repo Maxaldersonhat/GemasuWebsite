@@ -114,8 +114,8 @@ const Contact = () => {
                 <FaMapMarkerAlt />
               </div>
               <h3>Visit Us</h3>
-              <p>123 Paint Street</p>
-              <p>Nairobi City Center</p>
+              <p>Kondele Flyover</p>
+              <p>Kisumu, Kenya</p>
             </div>
 
             <div className="contact-info-card">
@@ -123,8 +123,8 @@ const Contact = () => {
                 <FaPhone />
               </div>
               <h3>Call Us</h3>
-              <p>+254 XXX XXX XXX</p>
-              <p>+254 XXX XXX XXX</p>
+              <p>+254-715-268-011 /</p>
+              <p>0718677664</p>
             </div>
 
             <div className="contact-info-card">
@@ -132,8 +132,8 @@ const Contact = () => {
                 <FaEnvelope />
               </div>
               <h3>Email Us</h3>
-              <p>info@gemasupaints.com</p>
-              <p>sales@gemasupaints.ke</p>
+              <p>support@gemasupaint.co.ke</p>
+             
             </div>
 
             <div className="contact-info-card">
@@ -142,7 +142,7 @@ const Contact = () => {
               </div>
               <h3>Business Hours</h3>
               <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
-              <p>Sat: 9:00 AM - 4:00 PM</p>
+              <p>Sun: 9:00 AM - 4:00 PM</p>
             </div>
 
            
