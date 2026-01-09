@@ -39,11 +39,15 @@ const Footer = () => {
 
         <div className="footer-section">
           <h3 className="footer-heading">Our Location</h3>
+          <p className="footer-text">
+            Kondele Flyover, Kisumu, Kenya<br />
+            Phone: +254-715-268-011<br />
+            Email: support@gemasupaints.com</p>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2025 Gemasu Paints. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Gemasu Paints. All Rights Reserved.</p>
       </div>
     </footer>
   );

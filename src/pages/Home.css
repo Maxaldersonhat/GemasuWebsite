@@ -1,8 +1,308 @@
-*{
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
+/* --- Global Resets & Variables --- */
+:root {
+  --primary-blue: #1e3a8a;   /* Deep Blue */
+  --primary-yellow: #facc15; /* Bright Yellow */
+  --yellow-hover: #eab308;
+  --text-main: #1f2937;      /* Dark Gray */
+  --text-muted: #4b5563;     /* Medium Gray */
+  --bg-light: #f9fafb;       /* Very Light Gray */
+  --white: #ffffff;
 }
 
+* {
+  box-sizing: border-box;
+}
 
+.home-container {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-color: #111827;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: #f3f4f6;
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.btn {
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-yellow);
+  color: #111827;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--yellow-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--white);
+  color: #111827;
+}
+
+/* --- Welcome Section --- */
+.welcome-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--white);
+}
+
+.section-container-small {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+}
+
+.section-text {
+  color: var(--text-muted);
+  line-height: 1.625;
+  font-size: 1.125rem;
+}
+
+/* --- Timeline Section --- */
+.timeline-section {
+  padding: 4rem 1rem;
+  background-color: var(--bg-light);
+  overflow: hidden;
+}
+
+.timeline-wrapper {
+  max-width: 64rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* The Vertical Line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 4px;
+  background-color: var(--primary-blue);
+}
+
+.timeline-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* The Year Bubble */
+.year-bubble {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary-yellow);
+  border: 4px solid var(--white);
+  z-index: 10;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Columns */
+.col-empty {
+  width: 50%;
+  display: none; /* Hidden on mobile */
+  padding-right: 2rem;
+}
+
+.col-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* The Card Box */
+.timeline-card {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  max-width: 24rem;
+  width: 100%;
+  text-align: left;
+}
+
+.timeline-card h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.timeline-card p {
+  font-size: 0.875rem;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* --- Trusted By Section --- */
+.trusted-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-light);
+}
+
+.trusted-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.trusted-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  text-align: center;
+}
+
+.trusted-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-circle {
+  background-color: var(--primary-blue);
+  padding: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-svg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--white);
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.card-desc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  padding: 0 1rem;
+}
+
+/* --- Media Queries --- */
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  /* Timeline Logic for Desktop */
+  .col-empty {
+    display: block;
+  }
+  .col-content {
+    width: 50%;
+  }
+  .content-right {
+    padding-left: 3rem;
+    justify-content: flex-start;
+  }
+  .content-left {
+    padding-right: 3rem;
+    justify-content: flex-end;
+  }
+  
+  /* Grid Logic */
+  .trusted-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

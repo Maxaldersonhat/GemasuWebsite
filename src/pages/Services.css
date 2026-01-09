@@ -1,0 +1,296 @@
+/* --- Variables --- */
+:root {   
+  --accent-yellow: #fbbf24;   
+  --text-dark: #1f2937;
+  --text-gray: #4b5563;
+  --bg-light: #ffffff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Global Reset & Layout --- */
+.services-page {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- Hero Section --- */
+.services-hero {
+  background-color: #0a1f5c;
+  color: white;
+  padding: 6rem 1rem 8rem 1rem;
+  text-align: center;
+  border-bottom-left-radius: 50% 20px;
+  border-bottom-right-radius: 50% 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+
+.service-section {
+  padding: 5rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Reverse layout for the middle section */
+.reverse-layout .container {
+  flex-direction: row-reverse;
+}
+
+/* --- Columns --- */
+.content-col {
+  flex: 1;
+}
+
+.image-col {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Typography & Elements --- */
+.tagline {
+  display: block;
+  color: var(--accent-yellow);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  border-left: 3px solid var(--accent-yellow);
+  padding-left: 10px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.description {
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* --- Lists (Painting Services) --- */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.check-icon {
+  background-color: var(--accent-yellow);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* --- Info Cards (Manufacturing) --- */
+.info-cards {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.info-card {
+  background-color: #f8fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-yellow);
+}
+
+.info-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-blue);
+}
+
+.info-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+/* --- Product Tags (Sell Products) --- */
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.tag {
+  background-color: #f3f4f6;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+}
+
+/* --- Buttons --- */
+.btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-dark {
+  background-color: var(--primary-blue);
+  color: white;
+}
+.btn-dark:hover { background-color: #1e293b; }
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+}
+.btn-outline:hover { background-color: var(--primary-blue); color: white; }
+
+.btn-yellow {
+  background-color: var(--accent-yellow);
+  color: var(--primary-blue);
+}
+.btn-yellow:hover { background-color: #eab308; }
+
+/* --- Images Wrappers --- */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Background blob effects behind images */
+.bg-yellow-tint {
+  background-color: #fef3c7; 
+}
+
+.bg-gray-tint {
+  background-color: #f1f5f9; 
+}
+
+.bg-gradient-tint {
+  background-color: #fffbeb;
+}
+
+.abstract-gradient-box {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #dc2626 0%, #d97706 100%); 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Contact Strip --- */
+.contact-strip {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f8fafc;
+  margin-top: 2rem;
+}
+
+.contact-strip h3 {
+  color: var(--primary-blue);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-details {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .reverse-layout .container {
+    flex-direction: column;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .image-wrapper img, .abstract-gradient-box {
+    height: 250px;
+  }
+}

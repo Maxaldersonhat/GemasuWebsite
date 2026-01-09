@@ -10,10 +10,10 @@ return (
       <div className= 'nav-links' >
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/projects">Projects</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/projects">Our Work</a></li>
           <li><a href="/products">Products</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/contact">Contact Us</a></li>
         </ul>
       </div>
       <img className='menu-icon' src="src/assets/menu.png" alt="Menu Icon" />
