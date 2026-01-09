@@ -140,8 +140,14 @@
   position: relative;
 }
 
+/* MOBILE FIRST FIXES FOR TIMELINE 
+   We hide the absolute line and position bubbles relatively on mobile 
+*/
+
 /* The Vertical Line */
 .timeline-line {
+  /* Hidden on mobile to prevent clutter */
+  display: none; 
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -152,6 +158,8 @@
 
 .timeline-row {
   display: flex;
+  /* Stack vertically on mobile */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -161,9 +169,12 @@
 
 /* The Year Bubble */
 .year-bubble {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Relative positioning for mobile so it sits above the card */
+  position: relative; 
+  left: auto;
+  transform: none;
+  margin-bottom: 1rem;
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,9 +191,7 @@
 
 /* Timeline Columns */
 .col-empty {
-  width: 50%;
-  display: none; /* Hidden on mobile */
-  padding-right: 2rem;
+  display: none; 
 }
 
 .col-content {
@@ -285,17 +294,44 @@
     font-size: 1.25rem;
   }
   
-  /* Timeline Logic for Desktop */
+  /* --- Desktop Timeline Logic --- */
+  
+  /* Show the vertical line */
+  .timeline-line {
+    display: block; 
+  }
+
+  /* Reset Row to Horizontal */
+  .timeline-row {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Reset Bubble to Absolute Center */
+  .year-bubble {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+  }
+
+  /* Show Empty Columns for spacing */
   .col-empty {
     display: block;
+    width: 50%;
+    padding-right: 2rem;
   }
+
   .col-content {
     width: 50%;
   }
+
+  /* Specific padding for alternating sides */
   .content-right {
     padding-left: 3rem;
     justify-content: flex-start;
   }
+
   .content-left {
     padding-right: 3rem;
     justify-content: flex-end;

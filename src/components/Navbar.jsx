@@ -1,24 +1,57 @@
-import React from 'react'
-import './Navbar.css'
-
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
 
 function Navbar() {
-  
-return (
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // State to track current path
+  const [currentPath, setCurrentPath] = useState('');
+
+  useEffect(() => {
+    // Get the current path (e.g., "/services" or "/")
+    setCurrentPath(window.location.pathname);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  // Helper to determine if a link is active
+  const getLinkClass = (path) => {
+    return currentPath === path ? 'active' : '';
+  };
+
+  return (
     <nav className='navbar'>
       <img className='logo' src="src/assets/logo.png" alt="Company Logo" />
-      <div className= 'nav-links' >
+      
+      <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/projects">Our Work</a></li>
-          <li><a href="/products">Products</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li>
+            <a href="/" className={getLinkClass('/')}>Home</a>
+          </li>
+          <li>
+            <a href="/services" className={getLinkClass('/services')}>Services</a>
+          </li>
+          <li>
+            <a href="/projects" className={getLinkClass('/projects')}>Our Work</a>
+          </li>
+          <li>
+            <a href="/products" className={getLinkClass('/products')}>Products</a>
+          </li>
+          <li>
+            <a href="/contact" className={getLinkClass('/contact')}>Contact Us</a>
+          </li>
         </ul>
       </div>
-      <img className='menu-icon' src="src/assets/menu.png" alt="Menu Icon" />
+
+      <img 
+        className='menu-icon' 
+        src="src/assets/menu.png" 
+        alt="Menu Icon" 
+        onClick={toggleMenu}
+      />
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
