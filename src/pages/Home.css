@@ -1,11 +1,11 @@
 /* --- Global Resets & Variables --- */
 :root {
-  --primary-blue: #1e3a8a;   /* Deep Blue */
-  --primary-yellow: #facc15; /* Bright Yellow */
+  --primary-blue: #1e3a8a;   
+  --primary-yellow: #facc15; 
   --yellow-hover: #eab308;
-  --text-main: #1f2937;      /* Dark Gray */
-  --text-muted: #4b5563;     /* Medium Gray */
-  --bg-light: #f9fafb;       /* Very Light Gray */
+  --text-main: #1f2937;     
+  --text-muted: #4b5563;    
+  --bg-light: #f9fafb;       
   --white: #ffffff;
 }
 
@@ -140,13 +140,11 @@
   position: relative;
 }
 
-/* MOBILE FIRST FIXES FOR TIMELINE 
-   We hide the absolute line and position bubbles relatively on mobile 
-*/
+
 
 /* The Vertical Line */
 .timeline-line {
-  /* Hidden on mobile to prevent clutter */
+  
   display: none; 
   position: absolute;
   left: 50%;
@@ -158,7 +156,7 @@
 
 .timeline-row {
   display: flex;
-  /* Stack vertically on mobile */
+  
   flex-direction: column; 
   justify-content: center;
   align-items: center;
@@ -169,7 +167,6 @@
 
 /* The Year Bubble */
 .year-bubble {
-  /* Relative positioning for mobile so it sits above the card */
   position: relative; 
   left: auto;
   transform: none;
@@ -294,20 +291,19 @@
     font-size: 1.25rem;
   }
   
-  /* --- Desktop Timeline Logic --- */
   
-  /* Show the vertical line */
+  
   .timeline-line {
     display: block; 
   }
 
-  /* Reset Row to Horizontal */
+
   .timeline-row {
     flex-direction: row;
     align-items: center;
   }
 
-  /* Reset Bubble to Absolute Center */
+ 
   .year-bubble {
     position: absolute;
     left: 50%;
@@ -315,7 +311,7 @@
     margin-bottom: 0;
   }
 
-  /* Show Empty Columns for spacing */
+ 
   .col-empty {
     display: block;
     width: 50%;
@@ -326,7 +322,7 @@
     width: 50%;
   }
 
-  /* Specific padding for alternating sides */
+  
   .content-right {
     padding-left: 3rem;
     justify-content: flex-start;
