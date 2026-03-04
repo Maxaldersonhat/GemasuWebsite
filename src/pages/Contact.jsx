@@ -17,11 +17,36 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("/sendmail.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    const result = await response.text();
+
+    if (result === "success") {
+      alert("Message sent successfully!");
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong.");
+  }
+};
 
   return (
     <div className="contact-page">
@@ -58,7 +83,7 @@ const Contact = () => {
                   type="text"
                   id="fullName"
                   name="fullName"
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                   value={formData.fullName}
                   onChange={handleChange}
                   required
@@ -95,7 +120,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us what you need..."
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}

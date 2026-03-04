@@ -6,6 +6,24 @@ import image10 from '../assets/image10.jpg';
 import image2 from '../assets/image2.jpg';
 import image5 from '../assets/image5.jpg';
 import image16 from '../assets/image16.jpg';
+import image3 from '../assets/image3.jpg';
+import image4 from '../assets/image4.jpg';
+import image6 from '../assets/image6.jpg';
+import image7 from '../assets/image7.jpg';
+import image27 from '../assets/image27.jpg';
+import image33 from '../assets/image33.jpg';
+import image34 from '../assets/image34.jpg';
+import image35 from '../assets/image35.jpg';
+import image36 from '../assets/image36.jpg';
+import image38 from '../assets/image38.jpg';
+import image43 from '../assets/image43.jpeg';
+import image44 from '../assets/image44.jpeg';
+import image45 from '../assets/image45.jpeg';
+import image46 from '../assets/image46.jpeg';
+
+
+
+
 
 
 const Projects = () => {
@@ -20,6 +38,7 @@ const Projects = () => {
       alt: 'Commercial Exterior Project',
       label: 'COMMERCIAL EXTERIOR'
     },
+  
     {
       id: 2,
       category: 'residential-interior',
@@ -61,6 +80,104 @@ const Projects = () => {
       image: image23,
       alt: 'Residential Interior Project',
       label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 8,
+      category: 'residential-interior',
+      image: image3,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 9,
+      category: 'residential-interior',
+      image: image4,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 10,
+      category: 'residential-exterior',
+      image: image6,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR'
+    },
+    {
+      id: 11,
+      category: 'residential-exterior',
+      image: image7,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR'
+    },
+    {
+      id: 12,
+      category: 'residential-interior',
+      image: image27,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 13,
+      category: 'residential-interior',
+      image: image33,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 14,
+      category: 'residential-interior',
+      image: image34,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 15,
+      category: 'residential-interior',
+      image: image35,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 16,
+      category: 'residential-interior',
+      image: image36,
+      alt: 'Residential Interior Project',
+      label: 'RESIDENTIAL INTERIOR'
+    },
+    {
+      id: 17,
+      category: 'residential-exterior',
+      image: image38,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR'
+    },
+    { 
+      id: 18,
+      category: 'residential-exterior',
+      image: image43,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR'
+    },
+    {
+      id: 19,
+      category: 'residential-exterior',
+      image: image44,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR' 
+    },
+    {
+      id: 20,
+      category: 'residential-exterior',
+      image: image45,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR' 
+    },
+    {
+      id: 21,
+      category: 'residential-exterior',
+      image: image46,
+      alt: 'Residential Exterior Project',
+      label: 'RESIDENTIAL EXTERIOR' 
     }
   ];
 

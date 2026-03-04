@@ -38,7 +38,7 @@
   height: auto;
   /* If image is missing, this ensures text is visible */
   min-height: 40px; 
-  background-color: #eee; 
+   
   display: block;
 }
 

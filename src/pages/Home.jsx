@@ -102,7 +102,7 @@ function Home() {
             <div className="col-content content-left">
               <div className="timeline-card">
                 <h3>Industry Recognition</h3>
-                <p>Awarded "Best Paint Manufacturer in Kenya" for our commitment to quality and innovation.</p>
+                <p>Awarded Industry Recognition in Kenya for our commitment to quality and innovation.</p>
               </div>
             </div>
             

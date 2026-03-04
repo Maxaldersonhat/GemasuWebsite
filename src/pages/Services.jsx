@@ -101,7 +101,7 @@ const Services = () => {
             <span className="tagline">PREMIUM RETAIL EXPERIENCE</span>
             <h2 className="section-title">Sell Products</h2>
             <p className="description">
-              Step into our retail spaces to explore a wide range of premium paints and accessories. Whether you're a professional contractor or a DIY enthusiast, our organized storefronts offer everything you need. From silk finishes and matte textures to specialty industrial coatings, we provide the full spectrum of Gemasu quality at your fingertips.
+              Step into our retail space to explore a wide range of premium paints and accessories. Whether you're a professional contractor or a DIY enthusiast, our organized storefronts offer everything you need. From silk finishes and matte textures to specialty industrial coatings, we provide the full spectrum of Gemasu quality at your fingertips.
             </p>
 
             <div className="product-tags">
