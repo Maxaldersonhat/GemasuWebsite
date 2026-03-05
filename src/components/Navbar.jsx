@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../assets/logo.png';
+import menu from '../assets/menu.png';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,31 +25,31 @@ function Navbar() {
 
   return (
     <nav className='navbar'>
-      <img className='logo' src="src/assets/logo.png" alt="Company Logo" />
+      <img className='logo' src={logo} alt="Company Logo" />
       
       <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul>
           <li>
-            <a href="/" className={getLinkClass('/')}>Home</a>
+            <Link to="/" className={getLinkClass('/')}>Home</Link>
           </li>
           <li>
-            <a href="/services" className={getLinkClass('/services')}>Services</a>
+            <Link to="/services" className={getLinkClass('/services')}>Services</Link>
           </li>
           <li>
-            <a href="/projects" className={getLinkClass('/projects')}>Our Work</a>
+            <Link to="/projects" className={getLinkClass('/projects')}>Our Work</Link>
           </li>
           <li>
-            <a href="/products" className={getLinkClass('/products')}>Products</a>
+            <Link to="/products" className={getLinkClass('/products')}>Products</Link>
           </li>
           <li>
-            <a href="/contact" className={getLinkClass('/contact')}>Contact Us</a>
+            <Link to="/contact" className={getLinkClass('/contact')}>Contact Us</Link>
           </li>
         </ul>
       </div>
 
       <img 
         className='menu-icon' 
-        src="src/assets/menu.png" 
+        src= {menu}
         alt="Menu Icon" 
         onClick={toggleMenu}
       />
