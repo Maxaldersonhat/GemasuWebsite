@@ -2,21 +2,16 @@
   display: flex;  
   flex-direction: column;
   min-height: 100vh;
- 
 }
 
 /* Hero Section */
 .contact-hero {
   padding: 80px 20px;
- /* background-image: url('../assets/gemasu\ latest.jpg'); */
-  /*background-repeat: no-repeat; */
-
 }
 
 .contact-hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  
 }
 
 .contact-hero h1 {
@@ -29,11 +24,11 @@
 }
 
 .contact-hero > p {
-  
   font-size: 16px;
   color: #5a6c84;
   margin-bottom: 40px;
 }
+
 .contact-hero .mission {
   text-align: center;
   font-size: 18px;
@@ -43,9 +38,8 @@
 }
 
 .hero-service-card {
-  
-padding: 30px;
-max-width: 600px;
+  padding: 30px;
+  max-width: 600px;
 }
 
 .hero-service-card h3 {
@@ -96,8 +90,6 @@ max-width: 600px;
 .contact-form-wrapper {
   background-color: #ffffff;
   padding: 40px;
-  
- 
 }
 
 .contact-form-wrapper h2 {
@@ -140,6 +132,8 @@ max-width: 600px;
   color: #2c4a7c;
   transition: border-color 0.3s ease;
   font-family: Arial, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -167,10 +161,18 @@ max-width: 600px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
+  width: 100%;
 }
 
 .submit-button:hover {
   background-color: #b34d36;
+}
+
+.form-status {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #2c4a7c;
+  font-weight: 500;
 }
 
 /* Contact Details */
@@ -189,7 +191,6 @@ max-width: 600px;
 }
 
 .info-icon {
-  
   width: 50px;
   height: 50px;
   display: flex;
@@ -215,6 +216,7 @@ max-width: 600px;
   color: #5a6c84;
   margin: 3px 0;
   line-height: 1.5;
+  word-break: break-word;
 }
 
 /* Map Container */
@@ -235,6 +237,12 @@ max-width: 600px;
   gap: 10px;
 }
 
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .map-icon {
   font-size: 40px;
   color: #c85a3f;
@@ -253,7 +261,7 @@ max-width: 600px;
   color: #8a95a3 !important;
 }
 
-/* Responsive Design */
+/* ── Responsive: Tablet (≤ 992px) ── */
 @media (max-width: 992px) {
   .contact-container {
     grid-template-columns: 1fr;
@@ -263,27 +271,87 @@ max-width: 600px;
   .contact-hero h1 {
     font-size: 36px;
   }
+
+  .hero-service-card {
+    max-width: 100%;
+  }
 }
 
+/* ── Responsive: Mobile (≤ 576px) ── */
 @media (max-width: 576px) {
   .contact-hero {
-    padding: 60px 20px;
+    padding: 40px 16px;
   }
 
   .contact-hero h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
-  .contact-form-wrapper,
-  .contact-info-card {
-    padding: 25px;
+  .contact-hero .mission {
+    font-size: 15px;
   }
 
   .hero-service-card {
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .hero-service-card h3 {
+    font-size: 20px;
+  }
+
+  .hero-service-card p {
+    font-size: 14px;
+  }
+
+  .quote-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-content {
+    padding: 30px 16px;
+  }
+
+  .contact-form-wrapper {
+    padding: 20px 16px;
   }
 
   .contact-form-wrapper h2 {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .contact-info-card {
+    padding: 16px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .info-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-info-card h3 {
+    font-size: 16px;
+  }
+
+  .contact-info-card p {
+    font-size: 13px;
+  }
+
+  .map-container {
+    height: 200px;
+  }
+}
+
+/* ── Responsive: Very small (≤ 360px) ── */
+@media (max-width: 360px) {
+  .contact-hero h1 {
+    font-size: 22px;
+  }
+
+  .contact-form-wrapper h2 {
+    font-size: 18px;
   }
 }

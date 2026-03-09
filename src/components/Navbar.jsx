@@ -1,56 +1,76 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 import menu from '../assets/menu.png';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // State to track current path
-  const [currentPath, setCurrentPath] = useState('');
+  const location = useLocation();
+  const navRef = useRef(null);
 
+  // Close menu whenever the route changes
   useEffect(() => {
-    // Get the current path (e.g., "/services" or "/")
-    setCurrentPath(window.location.pathname);
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Close menu when clicking outside the navbar
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
 
-  // Helper to determine if a link is active
-  const getLinkClass = (path) => {
-    return currentPath === path ? 'active' : '';
-  };
+  const toggleMenu = () => setIsMobileMenuOpen((prev) => !prev);
+
+  // Close menu on nav link click (also handles same-route taps)
+  const handleLinkClick = () => setIsMobileMenuOpen(false);
+
+  const getLinkClass = (path) =>
+    location.pathname === path ? 'active' : '';
 
   return (
-    <nav className='navbar'>
+    <nav className='navbar' ref={navRef}>
       <img className='logo' src={logo} alt="Company Logo" />
-      
+
       <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
         <ul>
           <li>
-            <Link to="/" className={getLinkClass('/')}>Home</Link>
+            <Link to="/" className={getLinkClass('/')} onClick={handleLinkClick}>Home</Link>
           </li>
           <li>
-            <Link to="/services" className={getLinkClass('/services')}>Services</Link>
+            <Link to="/services" className={getLinkClass('/services')} onClick={handleLinkClick}>Services</Link>
           </li>
           <li>
-            <Link to="/projects" className={getLinkClass('/projects')}>Our Work</Link>
+            <Link to="/projects" className={getLinkClass('/projects')} onClick={handleLinkClick}>Our Work</Link>
           </li>
           <li>
-            <Link to="/products" className={getLinkClass('/products')}>Products</Link>
+            <Link to="/products" className={getLinkClass('/products')} onClick={handleLinkClick}>Products</Link>
           </li>
           <li>
-            <Link to="/contact" className={getLinkClass('/contact')}>Contact Us</Link>
+            <Link to="/contact" className={getLinkClass('/contact')} onClick={handleLinkClick}>Contact Us</Link>
           </li>
         </ul>
       </div>
 
-      <img 
-        className='menu-icon' 
-        src= {menu}
-        alt="Menu Icon" 
+      <img
+        className='menu-icon'
+        src={menu}
+        alt={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
         onClick={toggleMenu}
       />
     </nav>
